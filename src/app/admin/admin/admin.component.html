@@ -1,0 +1,117 @@
+<div class="container">
+    <h3>Available Course Fields</h3>
+  <div class="row my-3">
+    <div class="col-2">
+
+      <button type="button" class="mx-2"
+      pButton (click)="showAddDialog()" 
+      icon="pi pi-plus" 
+      label="New Field"></button> 
+    </div>
+    <div class="col-7 mt-1">
+      <span class="p-float-label ">
+        <input 
+        id="float-input" 
+        type="text" 
+        autocomplete="off"
+        pInputText 
+        class="w-75" 
+        style="height: 35px;"
+        [(ngModel)]="searchTerm"> 
+        <label for="float-input" class=""> Enter Field Name</label>
+      </span>
+    </div>
+  </div>
+    
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Field</th>
+        <th scope="col">Number of Courses</th>
+        <th scope="col">Manage</th>
+      </tr>
+    </thead> 
+    <tbody >
+      <tr *ngFor="let field of fields|filter:searchTerm ;let i = index"   >
+
+        <td class="py-3">{{field.name}}</td>
+        <td class="py-3">{{field.numberOfCourses}}</td>
+        <td class="py-3"> 
+            <button pButton pRipple 
+            type="button" icon="pi pi-pencil" 
+            class="m-1 p-button-rounded p-button-warning"
+            (click)="showEditDialog(field.id!,i)"></button>
+            <button pButton pRipple 
+            type="button" icon="pi pi-trash" 
+            class="m-1 p-button-rounded p-button-danger"
+            (click)="confirmDeletion(field.id!,i)">
+            </button> 
+            <button type="button" class="mx-2 p-button-info"
+            pButton (click)="onViewSingleField(field.id!,i)"  
+            label="View Field"></button> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+  <!-- <p-messages [value]="msgs" [style]="{width: '50vw'}"></p-messages> -->
+  <p-toast position="top-right" key="tr"></p-toast>
+
+<!-- <button class="btn btn-primary" (click)=" test()">click</button> -->
+    <p-dialog header="Adding new Field/Category" 
+    [(visible)]="displayAdd" 
+    [closable]="false" 
+    [draggable]="false"
+    [resizable]="false">
+    
+        <form [formGroup]="addFieldForm" (ngSubmit)="onAddNewField()" class="m-3 ">
+          <div class="my-3">
+            <span class="p-float-label ">
+                <input id="float-input" 
+                autocomplete="off"
+                type="text" 
+                pInputText 
+                class="w-100" 
+                formControlName="fieldname"> 
+                
+                <label for="float-input" >Enter Field Name</label>
+            </span>
+            <!-- <p class="mx-3" *ngIf="this.signupForm.get('userMainData.firstName')!.errors && this.signupForm.get('userMainData.firstName')!.errors!.required && this.signupForm.get('userMainData.firstName')!.touched">
+                this field is required</p>
+            <p class="mx-3" *ngIf="this.signupForm.get('userMainData.firstName')!.errors && this.signupForm.get('userMainData.firstName')!.errors!.minlength">
+                First name should contain at least 2 characters</p>  -->
+          </div>
+                
+          <button type="submit" pButton label="Add" class="my-3" [disabled]="!addFieldForm.valid"></button> 
+        </form>
+    </p-dialog>
+  <!-- Edit Dialog --------------------------------------------------------------------------------------->
+  <p-dialog header="Edit Field/Category" 
+  [(visible)]="displayEdit" 
+  [closable]="false" 
+  [draggable]="false"
+  [resizable]="false">
+  
+      <form [formGroup]="editFieldForm" (ngSubmit)="onEditField()" class="m-3 ">
+        <div class="my-3">
+          <span class="p-float-label ">
+              <input id="float-input" 
+              autocomplete="off"
+              type="text" 
+              pInputText 
+              class="w-100" 
+              formControlName="fieldname"> 
+              
+              <label for="float-input" >Enter Field Name</label>
+          </span>
+          <!-- <p class="mx-3" *ngIf="this.signupForm.get('userMainData.firstName')!.errors && this.signupForm.get('userMainData.firstName')!.errors!.required && this.signupForm.get('userMainData.firstName')!.touched">
+              this field is required</p>
+          <p class="mx-3" *ngIf="this.signupForm.get('userMainData.firstName')!.errors && this.signupForm.get('userMainData.firstName')!.errors!.minlength">
+              First name should contain at least 2 characters</p>  -->
+        </div>
+              
+        <button type="submit" pButton label="Save" class="my-3" [disabled]="!editFieldForm.valid"></button> 
+      </form>
+  </p-dialog>
+</div>

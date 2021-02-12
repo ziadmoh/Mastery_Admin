@@ -1,0 +1,61 @@
+<div class="container container-z">
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="mt-5">
+
+
+    <div class="row ">
+        <div class="col-lg-4 "></div>
+        <div class="col-lg-4 my-3">
+            <span class="p-float-label ">
+                <input 
+                id="float-input" 
+                type="text" 
+                autocomplete="off"
+                pInputText 
+                class="w-100" 
+                formControlName="emailOrUserName"> 
+                <label for="float-input" class=""> Email</label>
+            </span>
+            <p class="mx-3" *ngIf="this.loginForm.get('emailOrUserName')!.errors && this.loginForm.get('emailOrUserName')!.errors!.required && this.loginForm.get('emailOrUserName')!.touched">
+                this field is required</p>
+        </div>
+        <div class="col-lg-4 "></div>
+    </div>
+        <div class="row ">
+            <div class="col-lg-4 "></div>
+        <div class="col-lg-4 my-3">
+            <span class="p-float-label ">
+                <input 
+                id="float-input" 
+                [type]="!showHidePass ? 'password' : 'text'" 
+                autocomplete="off"
+                pInputText 
+                class="w-100" 
+                formControlName="password"> 
+                <label for="float-input" class=""> Password</label>
+            </span>
+
+            <i class="pi pi-eye-slash showpass" (click)="showHidePassword()" *ngIf="!showHidePass"></i>
+            <i class="pi pi-eye hidepass" (click)="showHidePassword()" *ngIf="showHidePass"></i>
+            
+            <p class="mx-3" *ngIf="this.loginForm.get('password')!.errors && this.loginForm.get('password')!.errors!.required && this.loginForm.get('password')!.touched">
+                this field is required</p> 
+        </div>
+        <div class="col-lg-4 "></div>
+    </div>
+    <!-- -----------Submit -->
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2">
+            <button pButton class="" 
+    label="Log in" type="submit"></button>
+        </div>
+        <div class="col-5"></div>
+    </div>
+    
+</form>
+</div>
+
+
+

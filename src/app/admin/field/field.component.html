@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>field id : {{field.id}}</h3>
+    <h3>field name: {{field.name}}</h3>
+    <h3>Number of corses in this field : {{field.numberOfCourses}}</h3>
+    <div class="row">
+        <div class="col-md-4"  *ngFor="let course of field.courses; let i = index">
+            <div class="card" style="width: 18rem;">
+                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{course.name}}</h5>
+                  <p class="card-text">{{course.discription}}</p>
+                  <li class="list-group-item">Course id : {{course.id}}</li>
+                  <li class="list-group-item">Course Type : {{course.type}}</li>
+                  <li class="list-group-item">Teacher name : {{course.teacherName}}</li>
+                  <li class="list-group-item">Number of students {{course.numberOfStudents}}</li>
+                  <a  class="btn btn-primary" (click)="onViewCourse(i,course.id)">View Course</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<!-- <h3>Courses</h3> -->
+

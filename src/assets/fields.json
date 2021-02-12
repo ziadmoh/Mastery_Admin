@@ -1,0 +1,106 @@
+{
+	"fields": [
+			{
+				"id": "1000",
+				"name": "Math",
+				"numberOfCourses": 24,
+				"courses":[
+					{
+						"id":"C1000",
+						"name":"algebra",
+						"type":"private",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"ziad",
+						"numberOfStudents":30
+					},
+					{
+						"id":"C1010",
+						"name":"algebra2",
+						"type":"public",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"ahmed",
+						"numberOfStudents":15
+					}
+				]
+			},
+			{
+				"id": "1001",
+				"name": "Computer sciense",
+				"numberOfCourses": 3,
+				"courses":[
+					{
+						"id":"C100022",
+						"name":"pl1",
+						"type":"private",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"ziad",
+						"numberOfStudents":10
+					},
+					{
+						"id":"C1010",
+						"name":"pl2",
+						"type":"public",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"ahmed",
+						"numberOfStudents":60
+					}
+				]
+			},
+			{
+				"id": "1002",
+				"name": "Data structre",
+				"numberOfCourses": 30,
+				"courses":[
+					{
+						"id":"C10022",
+						"name":"Ds1",
+						"type":"public",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"ziad",
+						"numberOfStudents":10
+					},
+					{
+						"id":"C109910",
+						"name":"Ds2",
+						"type":"public",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"ahmed",
+						"numberOfStudents":60
+					},
+					{
+						"id":"C10",
+						"name":"Ds2",
+						"type":"private",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"mohamed",
+						"numberOfStudents":35
+					},
+					{
+						"id":"C109910",
+						"name":"Ds2",
+						"type":"public",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"zzzz",
+						"numberOfStudents":70
+					},
+					{
+						"id":"C109910",
+						"name":"Dsdd2",
+						"type":"private",
+						"img":"https://via.placeholder.com/350x150",
+						"discription":"teacher writes this discription",
+						"teacherName":"Mr.zzz",
+						"numberOfStudents":70
+					}
+				]
+			}
+	]
+} 
